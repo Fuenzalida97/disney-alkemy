@@ -1,13 +1,13 @@
 require('./config/config');
-
 const express = require('express');
 const app = express();
+const apiRouter = require('./routes/api');
 
 const bodyParser = require('body-parser');
 
 // Database
 
-const db = require('./config/database')
+require('./config/database')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -15,17 +15,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-//Route movie
-app.use(require('./routes/movies'));
-
-
-db.authenticate()
-    .then(() => {
-        console.log('Conectado')
-    })
-    .catch(err => {
-        console.log('No se conecto')
-    });
+//Route
+app.use('/api', apiRouter);
 
 
 app.listen(process.env.PORT, () => {

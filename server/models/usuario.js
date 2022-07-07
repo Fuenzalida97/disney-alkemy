@@ -1,24 +1,17 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('movies', {
+    return sequelize.define('usuarios', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        titulo: {
-            type: type.STRING,
-            required: true,
-        },
-        imagen: {
+        nombre: {
             type: type.STRING
         },
-        fechaCreacion: {
+        email: {
             type: type.STRING
         },
-        calificacion: {
-            type: type.STRING
-        },
-        personajes: {
+        password: {
             type: type.STRING
         },
     });
