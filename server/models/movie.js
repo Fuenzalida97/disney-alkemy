@@ -12,9 +12,6 @@ module.exports = (sequelize, type) => {
         imagen: {
             type: type.STRING
         },
-        fechaCreacion: {
-            type: type.STRING
-        },
         calificacion: {
             type: type.STRING
         },

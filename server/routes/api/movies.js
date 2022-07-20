@@ -3,6 +3,10 @@ const router = require('express').Router();
 const { Movie } = require('../../config/database');
 
 router.get('/', async(req, res) => {
+
+    //obtener usuario que hace la petición
+    console.log(req.usuarioId);
+
     const movies = await Movie.findAll();
     res.json(movies);
 });
