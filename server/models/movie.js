@@ -3,20 +3,19 @@ module.exports = (sequelize, type) => {
         id: {
             type: type.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            notNull: true
         },
-        titulo: {
+        title: {
             type: type.STRING,
             required: true,
+            notNull: true
         },
-        imagen: {
+        image: {
             type: type.STRING
         },
-        calificacion: {
-            type: type.STRING
-        },
-        personajes: {
-            type: type.STRING
-        },
+        calification: {
+            type: type.DOUBLE,
+        }
     });
 }

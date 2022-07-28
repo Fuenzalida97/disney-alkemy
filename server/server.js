@@ -1,4 +1,5 @@
 require('./config/config');
+require('./models/asociations');
 const express = require('express');
 const app = express();
 const apiRouter = require('./routes/api');
@@ -7,7 +8,7 @@ const bodyParser = require('body-parser');
 
 // Database
 
-require('./config/database')
+require('./config/database');
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));

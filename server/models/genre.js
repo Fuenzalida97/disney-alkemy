@@ -1,25 +1,18 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('user', {
+    return sequelize.define('genre', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             notNull: true
         },
-        username: {
+        name: {
             type: type.STRING,
             required: true,
             notNull: true
         },
-        email: {
-            type: type.STRING,
-            required: true,
-            notNull: true
-        },
-        password: {
-            type: type.STRING,
-            required: true,
-            notNull: true
-        },
+        image: {
+            type: type.STRING
+        }
     });
 }
